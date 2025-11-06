@@ -1,0 +1,86 @@
+.habit-card {
+  display: flex;
+  align-items: center;
+  background: rgba(29, 41, 61, 0.4);
+  border: 1px solid rgba(49, 65, 88, 0.5);
+  border-radius: 16px;
+  margin: 0;
+  padding: 21px;
+  font-size: 16px;
+  line-height: 24px;
+  max-width: 708px;
+  max-height: 86px;
+  transition: all 0.3s ease;
+}
+
+.habit-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 2px 20px rgba(49, 65, 88, 0.1);
+}
+
+.habit-card--completed {
+  background: linear-gradient(
+    to bottom right,
+    rgba(6, 182, 212, 0.1),
+    rgba(59, 130, 246, 0.1)
+  );
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.1);
+}
+
+.habit-card--completed:hover {
+  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.1);
+}
+
+.habit-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.habit-card__circle {
+  width: 24px;
+  height: 24px;
+  margin: 0 12px 0 0;
+  border: 2px solid #45556c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.habit-card__circle:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.habit-card__circle--completed {
+  border-color: #22d3ee;
+  background-color: rgba(34, 211, 238, 0.15);
+  box-shadow: 0 0 8px rgba(34, 211, 238, 0.5);
+}
+
+.habit-card__name {
+  margin: 0;
+  line-height: 24px;
+}
+
+.habit-card__name--completed {
+  color: #cad5e2;
+}
+
+.habit-card__streak {
+  font-size: 14px;
+  color: #62748e;
+  line-height: 20px;
+  margin: 0;
+}
+
+.habit-card__streak-icon {
+  width: 14px;
+  height: 14px;
+  margin: 0 3px 0 0;
+  vertical-align: text-top;
+}

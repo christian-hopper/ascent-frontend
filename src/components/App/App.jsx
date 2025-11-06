@@ -1,35 +1,51 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "../../pages/Home/Home.jsx";
+import Goals from "../../pages/Goals/Goals.jsx";
+import Journal from "../../pages/Journal/Journal.jsx";
+import Insights from "../../pages/Insights/Insights.jsx";
+import Navigation from "../Navigation/Navigation.jsx";
+import { todaysHabits as defaultHabits } from "../../utils/constants";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [habits, setHabits] = useState(defaultHabits);
+  const [isCollapsed, setIsCollapsed] = useState(false);
+
+  // Toggle completion (shared function)
+  const toggleHabit = (id) => {
+    setHabits((prev) =>
+      prev.map((habit) =>
+        habit.id === id ? { ...habit, completed: !habit.completed } : habit
+      )
+    );
+  };
+
+  const toggleCollapse = () => {
+    setIsCollapsed((prev) => !prev);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <Router>
+      <div className={`app ${isCollapsed ? "app--collapsed" : ""}`}>
+        <Navigation toggleCollapse={toggleCollapse} isCollapsed={isCollapsed} />
+        <div className="app__content">
+          <Routes>
+            <Route
+              path="/"
+              element={<Home habits={habits} toggleHabit={toggleHabit} />}
+            />
+            <Route
+              path="/goals"
+              element={<Goals habits={habits} toggleHabit={toggleHabit} />}
+            />
+            <Route path="/journal" element={<Journal />} />
+            <Route path="/insights" element={<Insights />} />
+          </Routes>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;
