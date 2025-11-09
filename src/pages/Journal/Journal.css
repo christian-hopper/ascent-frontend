@@ -21,7 +21,6 @@
 .journal__mood {
   padding: 16px;
   border-radius: 1.5rem;
-  backdrop-blur: 0.25rem;
   border: 1px solid rgba(100, 100, 100, 0.3);
   transition: all 0.3s ease;
   cursor: pointer;
@@ -183,4 +182,56 @@
   color: #64748b;
   font-size: 16px;
   line-height: 24px;
+}
+
+.journal__quotes {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.journal__quote {
+  background: #1d293d40;
+  border: 1px solid rgba(71, 85, 105, 0.5);
+  border-radius: 16px;
+  padding: 16px;
+  color: #cad5e2;
+  transition: all 0.3s ease;
+}
+
+.journal__quote:hover {
+  border-color: rgba(100, 116, 139, 0.5);
+}
+
+.journal__quote-text {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 4px;
+}
+
+.journal__quote-author {
+  font-size: 14px;
+  color: #90a1b9;
+}
+
+.journal__loading,
+.journal__error {
+  color: #90a1b9;
+  font-size: 14px;
+}
+
+.journal__show-more {
+  margin-top: 8px;
+  background: linear-gradient(to right, #00b8db, #2b7fff);
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.journal__show-more:hover {
+  opacity: 0.85;
 }
