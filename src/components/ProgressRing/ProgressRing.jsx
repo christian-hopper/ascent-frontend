@@ -1,4 +1,3 @@
-import React from "react";
 import "./ProgressRing.css";
 
 function ProgressRing({ score }) {

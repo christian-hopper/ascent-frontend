@@ -12,7 +12,19 @@ function App() {
   const [habits, setHabits] = useState(defaultHabits);
   const [isCollapsed, setIsCollapsed] = useState(false);
 
-  // Toggle completion (shared function)
+  const addHabit = (newHabit) => {
+    setHabits((prev) => [
+      ...prev,
+      {
+        ...newHabit,
+        id: Date.now(),
+        completed: false,
+        streak: 0,
+      },
+    ]);
+  };
+
+  // Toggle completion
   const toggleHabit = (id) => {
     setHabits((prev) =>
       prev.map((habit) =>
@@ -25,6 +37,8 @@ function App() {
     setIsCollapsed((prev) => !prev);
   };
 
+  const completedCount = habits.filter((habit) => habit.completed).length;
+
   return (
     <Router>
       <div className={`app ${isCollapsed ? "app--collapsed" : ""}`}>
@@ -33,11 +47,24 @@ function App() {
           <Routes>
             <Route
               path="/"
-              element={<Home habits={habits} toggleHabit={toggleHabit} />}
+              element={
+                <Home
+                  habits={habits}
+                  toggleHabit={toggleHabit}
+                  completedCount={completedCount}
+                />
+              }
             />
             <Route
               path="/goals"
-              element={<Goals habits={habits} toggleHabit={toggleHabit} />}
+              element={
+                <Goals
+                  habits={habits}
+                  toggleHabit={toggleHabit}
+                  completedCount={completedCount}
+                  addHabit={addHabit}
+                />
+              }
             />
             <Route path="/journal" element={<Journal />} />
             <Route path="/insights" element={<Insights />} />

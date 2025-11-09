@@ -65,10 +65,17 @@
 .habit-card__name {
   margin: 0;
   line-height: 24px;
+  color: #cad5e2;
 }
 
 .habit-card__name--completed {
   color: #cad5e2;
+}
+
+.habit-card__target {
+  color: #62748e;
+  font-size: 14px;
+  margin: 0 12px 0 0;
 }
 
 .habit-card__streak {
@@ -78,9 +85,22 @@
   margin: 0;
 }
 
+.habit-card__streak--highlight {
+  color: #ff8904;
+}
+
+.habit-card__streak--inactive {
+  color: #62748e;
+}
+
 .habit-card__streak-icon {
   width: 14px;
   height: 14px;
   margin: 0 3px 0 0;
   vertical-align: text-top;
+}
+
+.habit-card__streak--inactive .habit-card__streak-icon {
+  filter: brightness(0) saturate(100%) invert(55%) sepia(7%) saturate(446%)
+    hue-rotate(172deg) brightness(90%) contrast(89%);
 }

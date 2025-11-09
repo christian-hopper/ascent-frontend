@@ -1,7 +1,7 @@
 import { useNavigate, useLocation } from "react-router-dom";
 
 import ascentLogo from "../../assets/images/ascent-logo.svg";
-import chevronLogo from "../../assets/images/chevron-logo.svg";
+import chevronLogo from "../../assets/images/chevron-logo-left.svg";
 import homeGray from "../../assets/images/home-gray.svg";
 import homeCyan from "../../assets/images/home-cyan.svg";
 import targetGray from "../../assets/images/target-gray.svg";

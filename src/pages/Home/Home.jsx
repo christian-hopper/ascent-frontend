@@ -4,12 +4,10 @@ import HomeStats from "../../components/HomeStats/HomeStats";
 import HomeHabits from "../../components/HomeHabits/HomeHabits";
 import "./Home.css";
 
-function Home({ habits, toggleHabit }) {
-  const completedCount = habits.filter((habit) => habit.completed).length;
-
+function Home({ habits, toggleHabit, completedCount }) {
   return (
     <div className="home">
-      <Header title="Today's Focus" dateType="full" />
+      <Header title="Welcome Back" dateType="full" />
 
       <div className="home__main">
         <ScoreCard

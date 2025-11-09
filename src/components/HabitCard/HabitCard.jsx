@@ -2,7 +2,14 @@ import checkIcon from "../../assets/images/check-icon.svg";
 import streakIcon from "../../assets/images/streak-icon.svg";
 import "./HabitCard.css";
 
-function HabitCard({ name, completed, streak, amount, duration, onClick }) {
+function HabitCard({
+  name,
+  completed,
+  streak,
+  target,
+  showStreakLabel = true,
+  onClick,
+}) {
   return (
     <li
       className={`habit-card ${completed ? "habit-card--completed" : ""}`}
@@ -30,15 +37,21 @@ function HabitCard({ name, completed, streak, amount, duration, onClick }) {
         </p>
 
         <div className="habit-card__details">
-          {amount && <span className="habit-card__amount">{amount}</span>}
-          {duration && <span className="habit-card__duration">{duration}</span>}
-          <span className="habit-card__streak">
+          {target && <span className="habit-card__target">{target}</span>}
+
+          <span
+            className={`habit-card__streak
+              ${!showStreakLabel ? "habit-card__streak--highlight" : ""}
+              ${!completed ? "habit-card__streak--inactive" : ""}
+            `}
+          >
             <img
               src={streakIcon}
               alt="Streak"
               className="habit-card__streak-icon"
             />
-            {streak} day streak
+            {streak}
+            {showStreakLabel && " day streak"}
           </span>
         </div>
       </div>
