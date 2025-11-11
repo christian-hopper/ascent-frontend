@@ -245,7 +245,7 @@
   .journal__grid {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    margin-bottom: 24px;
   }
 
   /* Make moods horizontally scrollable */

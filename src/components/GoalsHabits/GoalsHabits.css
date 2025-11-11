@@ -43,4 +43,7 @@
   .goals-habits__list {
     grid-template-columns: 1fr;
   }
+  .goals-habits {
+    margin-bottom: 24px;
+  }
 }
