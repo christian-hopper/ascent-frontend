@@ -1,3 +1,9 @@
+.goals {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 .goals__header {
   padding: 24px;
   background: #020618;

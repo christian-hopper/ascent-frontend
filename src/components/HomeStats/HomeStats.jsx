@@ -16,7 +16,10 @@ function HomeStats() {
             <h3
               className={`home-stats__card-title home-stats__card-title--${color}`}
             >
-              {stat.title}
+              <span className="home-stats__title-desktop">{stat.title}</span>
+              <span className="home-stats__title-mobile">
+                {stat.shortTitle}
+              </span>
             </h3>
             <p className="home-stats__card-value">{stat.value}</p>
           </div>

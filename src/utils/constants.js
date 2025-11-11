@@ -50,9 +50,9 @@ const todaysHabits = [
 ];
 
 const homeStats = [
-  { title: "Current Streak", value: "12 Days" },
-  { title: "This Week", value: "21 habits" },
-  { title: "Total Completed", value: "156" },
+  { title: "Current Streak", shortTitle: "Streak", value: "12 Days" },
+  { title: "This Week", shortTitle: "This Week", value: "21 habits" },
+  { title: "Total Completed", shortTitle: "Total", value: "156" },
 ];
 
 const journalPrompts = [

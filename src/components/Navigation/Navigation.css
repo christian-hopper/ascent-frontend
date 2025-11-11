@@ -152,3 +152,9 @@
 .navigation.collapsed .navigation__item {
   justify-content: flex-end;
 }
+
+@media screen and (max-width: 810px) {
+  .navigation {
+    display: none;
+  }
+}

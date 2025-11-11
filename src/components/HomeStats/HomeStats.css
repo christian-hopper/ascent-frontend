@@ -57,8 +57,40 @@
   color: #51a2ff;
 }
 
+.home-stats__title-mobile {
+  display: none;
+}
+
 .home-stats__card-value {
   font-size: 32px;
   font-weight: 400;
   margin: 12px 0 0;
+}
+
+@media screen and (max-width: 810px) {
+  .home-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    order: 3;
+  }
+  .home-stats__card {
+    max-width: 100%;
+    max-height: none;
+    padding: 16px;
+  }
+  .home-stats__card-title {
+    font-size: 14px;
+  }
+
+  .home-stats__card-value {
+    font-size: 24px;
+    margin: 8px 0 0;
+  }
+  .home-stats__title-desktop {
+    display: none;
+  }
+  .home-stats__title-mobile {
+    display: inline;
+  }
 }

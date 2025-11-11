@@ -23,3 +23,9 @@
 .app--collapsed .app__content {
   max-width: calc(1440px - 46px);
 }
+
+@media screen and (max-width: 810px) {
+  .app__content {
+    max-width: 100%;
+  }
+}

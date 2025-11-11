@@ -56,8 +56,8 @@ function Goals({ completedCount, habits, toggleHabit, addHabit }) {
   });
 
   return (
-    <div className="goals">
-      <header className="goals__header">
+    <main className="goals">
+      <section className="goals__header">
         <div className="goals__header-top">
           <Header title="Goals" subtitle={monthYear} />
           <button
@@ -93,10 +93,10 @@ function Goals({ completedCount, habits, toggleHabit, addHabit }) {
             {completedCount}/{habits.length} Complete
           </span>
         </div>
-      </header>
+      </section>
 
       <GoalsHabits habits={habits} toggleHabit={toggleHabit} />
-    </div>
+    </main>
   );
 }
 

@@ -13,8 +13,8 @@
 }
 
 .journal__moods {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  flex-direction: row;
   gap: 16px;
 }
 
@@ -24,6 +24,7 @@
   border: 1px solid rgba(100, 100, 100, 0.3);
   transition: all 0.3s ease;
   cursor: pointer;
+  width: 100%;
 }
 
 .journal__mood:hover {
@@ -234,4 +235,65 @@
 
 .journal__show-more:hover {
   opacity: 0.85;
+}
+
+@media screen and (max-width: 810px) {
+  .journal {
+    padding: 0 16px;
+  }
+
+  .journal__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* Make moods horizontally scrollable */
+  .journal__moods {
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .journal__moods::-webkit-scrollbar {
+    display: none;
+  }
+
+  .journal__mood {
+    min-width: 100px;
+    scroll-snap-align: center;
+  }
+
+  .journal__mood--active {
+    transform: scale(1);
+  }
+
+  /* Make prompts horizontally scrollable */
+  .journal__prompts {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+  }
+
+  .journal__prompts::-webkit-scrollbar {
+    display: none;
+  }
+
+  .journal__moods,
+  .journal__prompts {
+    flex-wrap: nowrap;
+  }
+
+  .journal__prompt {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .journal__section {
+    margin-bottom: 24px;
+  }
 }

@@ -104,3 +104,9 @@
   filter: brightness(0) saturate(100%) invert(55%) sepia(7%) saturate(446%)
     hue-rotate(172deg) brightness(90%) contrast(89%);
 }
+
+@media screen and (max-width: 810px) {
+  .habit-card {
+    max-width: 100%;
+  }
+}

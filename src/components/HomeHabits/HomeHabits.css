@@ -1,3 +1,7 @@
+.home-habits {
+  grid-column: 1 / -1;
+}
+
 .home-habits__header {
   display: flex;
   justify-content: space-between;
@@ -30,4 +34,14 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
+}
+
+@media screen and (max-width: 810px) {
+  .home-habits {
+    order: 2;
+  }
+  .home-habits__list {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 12px;
+  }
 }

@@ -52,7 +52,7 @@ export default function Journal() {
     if (!text.trim()) return;
 
     const newEntry = {
-      id: Date.now(),
+      id: crypto.randomUUID(),
       date: new Date().toLocaleDateString("en-US", {
         month: "short",
         day: "numeric",
@@ -66,12 +66,12 @@ export default function Journal() {
   };
 
   return (
-    <div className="journal">
+    <main className="journal">
       {/* Header */}
       <Header title="Journal" dateType="full" />
 
       {/* Motivational Quotes Section */}
-      <div className="journal__section">
+      <section className="journal__section">
         <h3 className="journal__section-title">Daily Motivation</h3>
 
         {isLoading && <p className="journal__loading">Loading quotes...</p>}
@@ -80,8 +80,8 @@ export default function Journal() {
         {!isLoading && !error && (
           <>
             <div className="journal__quotes">
-              {quotes.slice(0, visibleCount).map((quote) => (
-                <div key={quote._id} className="journal__quote">
+              {quotes.slice(0, visibleCount).map((quote, index) => (
+                <div key={quote._id || index} className="journal__quote">
                   <p className="journal__quote-text">“{quote.content}”</p>
                   <p className="journal__quote-author">— {quote.author}</p>
                 </div>
@@ -98,10 +98,10 @@ export default function Journal() {
             )}
           </>
         )}
-      </div>
+      </section>
 
       {/* Mood Selector */}
-      <div className="journal__section">
+      <section className="journal__section">
         <h3 className="journal__section-title">How are you feeling?</h3>
         <div className="journal__moods">
           {moods.map((mood, index) => (
@@ -119,10 +119,10 @@ export default function Journal() {
             </button>
           ))}
         </div>
-      </div>
+      </section>
 
       {/* Daily Reflection Prompts */}
-      <div className="journal__section">
+      <section className="journal__section">
         <h3 className="journal__section-title">Daily Reflection</h3>
         <div className="journal__prompts">
           {journalPrompts.map((prompt, index) => (
@@ -139,10 +139,10 @@ export default function Journal() {
             </button>
           ))}
         </div>
-      </div>
+      </section>
 
       {/* Journal Input + Past Entries */}
-      <div className="journal__grid">
+      <section className="journal__grid">
         <JournalInput
           selectedPrompt={journalPrompts[selectedPrompt]}
           onSave={handleSave}
@@ -150,6 +150,7 @@ export default function Journal() {
 
         <div className="journal__past-entries">
           <h3 className="journal__section-title">Recent Entries</h3>
+          {/* Past entries */}
           <div className="journal__entries-list">
             {entries.length > 0 ? (
               entries.map((entry) => (
@@ -166,7 +167,7 @@ export default function Journal() {
             )}
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }

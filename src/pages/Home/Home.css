@@ -1,4 +1,10 @@
-.home {
+.home__header-desktop {
+  display: block;
+}
+
+.home__header-mobile {
+  padding: 0;
+  display: none;
 }
 
 .home__main {
@@ -6,4 +12,17 @@
   grid-template-columns: repeat(2, minmax(0, 702px));
   gap: 32px;
   margin: 0 0 32px;
+}
+
+@media screen and (max-width: 810px) {
+  .home__header-desktop {
+    display: none;
+  }
+  .home__header-mobile {
+    display: block;
+  }
+  .home__main {
+    display: flex;
+    flex-direction: column;
+  }
 }

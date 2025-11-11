@@ -38,3 +38,9 @@
     transform: translateY(0);
   }
 }
+
+@media screen and (max-width: 810px) {
+  .goals-habits__list {
+    grid-template-columns: 1fr;
+  }
+}

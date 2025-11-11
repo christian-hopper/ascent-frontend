@@ -28,6 +28,7 @@
   align-items: center;
   gap: 12px;
   margin: 0 0 16px;
+  overflow-x: auto;
 }
 
 .calendar-row__arrow {
@@ -47,8 +48,7 @@
   display: flex;
   gap: 8px;
   flex: 1;
-  overflow-x: auto;
-  scrollbar-width: none;
+  overflow: hidden;
 }
 
 .calendar-row__days::-webkit-scrollbar {
@@ -98,4 +98,33 @@
 .calendar-row__day-number {
   font-size: 16px;
   line-height: 24px;
+}
+
+@media (max-width: 810px) {
+  .calendar-row__week {
+    gap: 4px;
+  }
+
+  .calendar-row__days {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .calendar-row__days::-webkit-scrollbar {
+    display: none;
+  }
+
+  .calendar-row__day {
+    min-width: 56px;
+    height: 64px;
+  }
+
+  .calendar-row__arrow {
+    flex-shrink: 0;
+  }
 }

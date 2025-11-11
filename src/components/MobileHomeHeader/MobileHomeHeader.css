@@ -1,0 +1,51 @@
+.mobile-home-header {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.mobile-home-header__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.mobile-home-header__date {
+  margin: 0;
+  color: #90a1b9;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.mobile-home-header__icon {
+  color: #22d3ee;
+  filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.6));
+}
+
+.mobile-home-header__account-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom right, #00b8db, #2b7fff);
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.3);
+  transition: 0.2s;
+}
+
+.mobile-home-header__account-btn:hover {
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.5);
+}
+
+@media (max-width: 810px) {
+  .mobile-home-header {
+    display: flex;
+  }
+}
