@@ -1,0 +1,68 @@
+.insights-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin: 0 0 24px;
+}
+
+.insights-stats__card {
+  padding: 24px;
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  border: 1px solid transparent;
+}
+
+.insights-stats__card--cyan {
+  background: linear-gradient(to bottom right, #06b6d420, #3b82f620);
+  border-color: #06b6d430;
+}
+
+.insights-stats__card--purple {
+  background: linear-gradient(to bottom right, #a855f720, #ec489920);
+  border-color: #a855f730;
+}
+
+.insights-stats__card--green {
+  background: linear-gradient(to bottom right, #22c55e20, #10b98120);
+  border-color: #22c55e30;
+}
+
+.insights-stats__card--blue {
+  background: linear-gradient(to bottom right, #3b82f620, #6366f120);
+  border-color: #3b82f630;
+}
+
+.insights-stats__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 8px;
+}
+
+.insights-stats__icon {
+  width: 20px;
+  height: 20px;
+}
+
+.insights-stats__label {
+  font-size: 14px;
+  color: #90a1b9;
+  margin: 0;
+}
+
+.insights-stats__value {
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 400;
+  color: #fff;
+  margin: 0;
+}
+
+@media screen and (max-width: 810px) {
+  .insights-stats__card {
+    padding: 16px;
+  }
+  .insights-stats__value {
+    font-size: 30px;
+  }
+}

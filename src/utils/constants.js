@@ -62,6 +62,13 @@ const JOURNAL_PROMPTS = [
   "How did you grow today?",
 ];
 
+const INSIGHTS_STATS = [
+  { title: "Current Streak", value: "12 days" },
+  { title: "This Month", value: "137 tasks" },
+  { title: "Avg. Score", value: "73%" },
+  { title: "Active Days", value: "89" },
+];
+
 const MOODS = [
   {
     emoji: "😊",
@@ -90,4 +97,60 @@ const MOODS = [
   },
 ];
 
-export { TODAYS_HABITS, HOME_STATS, JOURNAL_PROMPTS, MOODS };
+const MOOD_DATA = [
+  { name: "Happy", value: 35, color: "#fbbf24" },
+  { name: "Calm", value: 25, color: "#06b6d4" },
+  { name: "Motivated", value: 20, color: "#ef4444" },
+  { name: "Anxious", value: 12, color: "#a855f7" },
+  { name: "Sad", value: 8, color: "#6366f1" },
+];
+
+const WEEKLY_DATA = [
+  { day: "Mon", score: 65 },
+  { day: "Tue", score: 72 },
+  { day: "Wed", score: 68 },
+  { day: "Thu", score: 78 },
+  { day: "Fri", score: 75 },
+  { day: "Sat", score: 82 },
+  { day: "Sun", score: 70 },
+];
+
+const MONTHLY_DATA = [
+  { week: "Week 1", habits: 28 },
+  { week: "Week 2", habits: 32 },
+  { week: "Week 3", habits: 35 },
+  { week: "Week 4", habits: 42 },
+];
+
+const ACHIEVEMENTS = [
+  {
+    icon: "🏆",
+    title: "Week Warrior",
+    desc: "Completed all habits for 7 days",
+    color: "insights__achievement--yellow",
+  },
+  {
+    icon: "🔥",
+    title: "On Fire",
+    desc: "Reached a 10-day streak",
+    color: "insights__achievement--orange",
+  },
+  {
+    icon: "🎯",
+    title: "Consistency King",
+    desc: "Logged journal entries for 15 days",
+    color: "insights__achievement--blue",
+  },
+];
+
+export {
+  TODAYS_HABITS,
+  HOME_STATS,
+  JOURNAL_PROMPTS,
+  INSIGHTS_STATS,
+  MOODS,
+  MOOD_DATA,
+  WEEKLY_DATA,
+  MONTHLY_DATA,
+  ACHIEVEMENTS,
+};
