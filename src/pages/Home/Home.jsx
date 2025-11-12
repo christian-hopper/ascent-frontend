@@ -5,7 +5,7 @@ import HomeStats from "../../components/HomeStats/HomeStats";
 import HomeHabits from "../../components/HomeHabits/HomeHabits";
 import "./Home.css";
 
-function Home({ habits, toggleHabit, completedCount }) {
+function Home({ habits, toggleHabit, completedCount, openModal }) {
   return (
     <main className="home">
       <div className="home__header-desktop">
@@ -13,7 +13,7 @@ function Home({ habits, toggleHabit, completedCount }) {
       </div>
 
       <div className="home__header-mobile">
-        <MobileHomeHeader />
+        <MobileHomeHeader openModal={openModal} />
       </div>
 
       <section className="home__main">

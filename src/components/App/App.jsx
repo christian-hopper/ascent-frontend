@@ -1,20 +1,22 @@
 import { useState } from "react";
-import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Home from "../../pages/Home/Home.jsx";
 import Goals from "../../pages/Goals/Goals.jsx";
 import Journal from "../../pages/Journal/Journal.jsx";
 import Insights from "../../pages/Insights/Insights.jsx";
 import Navigation from "../Navigation/Navigation.jsx";
 import BottomNav from "../BottomNav/BottomNav.jsx";
+import AccountModal from "../AccountModal/AccountModal.jsx";
+import AddHabitModal from "../AddHabitModal/AddHabitModal.jsx";
 import { todaysHabits as defaultHabits } from "../../utils/constants";
 import "./App.css";
 
 function App() {
   const [habits, setHabits] = useState(defaultHabits);
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const [activeModal, setActiveModal] = useState(null);
 
   const navigate = useNavigate();
-  const location = useLocation();
 
   const handleNavClick = (path) => {
     navigate(path);
@@ -49,12 +51,17 @@ function App() {
 
   const completedCount = habits.filter((habit) => habit.completed).length;
 
+  const closeModal = () => {
+    setActiveModal(null);
+  };
+
   return (
     <div className={`app ${isCollapsed ? "app--collapsed" : ""}`}>
       <Navigation
         toggleCollapse={toggleCollapse}
         isCollapsed={isCollapsed}
         handleNavClick={handleNavClick}
+        openModal={setActiveModal}
       />
       <BottomNav />
       <main className="app__content">
@@ -66,6 +73,7 @@ function App() {
                 habits={habits}
                 toggleHabit={toggleHabit}
                 completedCount={completedCount}
+                openModal={setActiveModal}
               />
             }
           />
@@ -77,12 +85,27 @@ function App() {
                 toggleHabit={toggleHabit}
                 completedCount={completedCount}
                 addHabit={addHabit}
+                openModal={setActiveModal}
               />
             }
           />
           <Route path="/journal" element={<Journal />} />
           <Route path="/insights" element={<Insights />} />
         </Routes>
+        <AddHabitModal
+          isOpen={activeModal === "addHabit"}
+          onClose={closeModal}
+          onSubmit={addHabit}
+          categories={[
+            "Health & Fitness",
+            "Learning",
+            "Creativity",
+            "Productivity",
+            "Mindfulness",
+          ]}
+        />
+
+        <AccountModal isOpen={activeModal === "account"} onClose={closeModal} />
       </main>
     </div>
   );

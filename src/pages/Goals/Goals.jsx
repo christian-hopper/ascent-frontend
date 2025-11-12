@@ -5,7 +5,7 @@ import GoalsHabits from "../../components/GoalsHabits/GoalsHabits";
 import AddHabitModal from "../../components/AddHabitModal/AddHabitModal";
 import "./Goals.css";
 
-function Goals({ completedCount, habits, toggleHabit, addHabit }) {
+function Goals({ completedCount, habits, toggleHabit, addHabit, openModal }) {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [weekDates, setWeekDates] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -62,23 +62,11 @@ function Goals({ completedCount, habits, toggleHabit, addHabit }) {
           <Header title="Goals" subtitle={monthYear} />
           <button
             className="goals__add-button"
-            onClick={() => setIsModalOpen(true)}
+            onClick={() => openModal("addHabit")}
           >
             +
           </button>
         </div>
-        <AddHabitModal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-          onSubmit={addHabit}
-          categories={[
-            "Health & Fitness",
-            "Learning",
-            "Creativity",
-            "Productivity",
-            "Mindfulness",
-          ]}
-        />
 
         <CalendarRow
           weekDates={weekDates}

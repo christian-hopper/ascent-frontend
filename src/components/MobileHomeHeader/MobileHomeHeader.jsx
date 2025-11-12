@@ -1,7 +1,7 @@
 import ascentLogo from "../../assets/images/ascent-logo.svg";
 import "./MobileHomeHeader.css";
 
-function MobileHomeHeader() {
+function MobileHomeHeader({ openModal }) {
   const currentDate = new Date().toLocaleDateString("en-US", {
     weekday: "long",
     month: "long",
@@ -22,7 +22,12 @@ function MobileHomeHeader() {
         <p className="mobile-home-header__date">{currentDate}</p>
       </div>
 
-      <button className="mobile-home-header__account-btn">A</button>
+      <button
+        className="mobile-home-header__account-btn"
+        onClick={() => openModal("account")}
+      >
+        A
+      </button>
     </div>
   );
 }

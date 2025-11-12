@@ -2,10 +2,10 @@ import { useNavigate, useLocation } from "react-router-dom";
 import navItems from "../../utils/navItems";
 import ascentLogo from "../../assets/images/ascent-logo.svg";
 import chevronLogo from "../../assets/images/chevron-logo-left.svg";
-import accountIcon from "../../assets/images/account-icon.svg";
+import accountIcon from "../../assets/images/account-gray.svg";
 import "./Navigation.css";
 
-function Navigation({ isCollapsed, toggleCollapse }) {
+function Navigation({ isCollapsed, toggleCollapse, openModal }) {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -49,7 +49,7 @@ function Navigation({ isCollapsed, toggleCollapse }) {
         </ul>
       </nav>
 
-      <div className="navigation__account">
+      <div className="navigation__account" onClick={() => openModal("account")}>
         <button className="navigation__account-button">
           <img
             src={accountIcon}
