@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import CalendarRow from "../../components/CalendarRow/CalendarRow";
 import GoalsHabits from "../../components/GoalsHabits/GoalsHabits";
-import AddHabitModal from "../../components/AddHabitModal/AddHabitModal";
 import "./Goals.css";
 
 function Goals({ completedCount, habits, toggleHabit, addHabit, openModal }) {
@@ -56,7 +55,7 @@ function Goals({ completedCount, habits, toggleHabit, addHabit, openModal }) {
   });
 
   return (
-    <main className="goals">
+    <div className="goals">
       <section className="goals__header">
         <div className="goals__header-top">
           <Header title="Goals" subtitle={monthYear} />
@@ -84,7 +83,7 @@ function Goals({ completedCount, habits, toggleHabit, addHabit, openModal }) {
       </section>
 
       <GoalsHabits habits={habits} toggleHabit={toggleHabit} />
-    </main>
+    </div>
   );
 }
 

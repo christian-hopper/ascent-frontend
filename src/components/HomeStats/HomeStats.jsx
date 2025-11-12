@@ -1,4 +1,4 @@
-import { homeStats } from "../../utils/constants";
+import { HOME_STATS } from "../../utils/constants";
 import "./HomeStats.css";
 
 function HomeStats() {
@@ -6,7 +6,7 @@ function HomeStats() {
 
   return (
     <div className="home-stats">
-      {homeStats.map((stat, index) => {
+      {HOME_STATS.map((stat, index) => {
         const color = colors[index];
         return (
           <div

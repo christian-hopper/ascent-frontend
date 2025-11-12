@@ -8,7 +8,7 @@ import Navigation from "../Navigation/Navigation.jsx";
 import BottomNav from "../BottomNav/BottomNav.jsx";
 import AccountModal from "../AccountModal/AccountModal.jsx";
 import AddHabitModal from "../AddHabitModal/AddHabitModal.jsx";
-import { todaysHabits as defaultHabits } from "../../utils/constants";
+import { TODAYS_HABITS as defaultHabits } from "../../utils/constants";
 import "./App.css";
 
 function App() {

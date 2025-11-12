@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Header from "../../components/Header/Header.jsx";
 import JournalInput from "../../components/JournalInput/JournalInput.jsx";
-import { journalPrompts, moods } from "../../utils/constants.js";
+import { JOURNAL_PROMPTS, MOODS } from "../../utils/constants.js";
 import { fetchRandomQuotes } from "../../utils/RandomQuotesApi.js";
 import "./Journal.css";
 
@@ -57,7 +57,7 @@ export default function Journal() {
         month: "short",
         day: "numeric",
       }),
-      mood: selectedMood !== null ? moods[selectedMood].emoji : "📝",
+      mood: selectedMood !== null ? MOODS[selectedMood].emoji : "📝",
       text,
       prompt: journalPrompts[selectedPrompt],
     };
@@ -66,7 +66,7 @@ export default function Journal() {
   };
 
   return (
-    <main className="journal">
+    <div className="journal">
       {/* Header */}
       <Header title="Journal" dateType="full" />
 
@@ -104,7 +104,7 @@ export default function Journal() {
       <section className="journal__section">
         <h3 className="journal__section-title">How are you feeling?</h3>
         <div className="journal__moods">
-          {moods.map((mood, index) => (
+          {MOODS.map((mood, index) => (
             <button
               key={mood.label}
               onClick={() => setSelectedMood(index)}
@@ -125,7 +125,7 @@ export default function Journal() {
       <section className="journal__section">
         <h3 className="journal__section-title">Daily Reflection</h3>
         <div className="journal__prompts">
-          {journalPrompts.map((prompt, index) => (
+          {JOURNAL_PROMPTS.map((prompt, index) => (
             <button
               key={index}
               onClick={() => setSelectedPrompt(index)}
@@ -144,7 +144,7 @@ export default function Journal() {
       {/* Journal Input + Past Entries */}
       <section className="journal__grid">
         <JournalInput
-          selectedPrompt={journalPrompts[selectedPrompt]}
+          selectedPrompt={JOURNAL_PROMPTS[selectedPrompt]}
           onSave={handleSave}
         />
 
@@ -168,6 +168,6 @@ export default function Journal() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

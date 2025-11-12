@@ -1,7 +1,24 @@
+import { useEffect } from "react";
 import closeIcon from "../../assets/images/close-icon.svg";
 import "./Modal.css";
 
 function Modal({ isOpen, onClose, icon, title, children }) {
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   return (

@@ -1,4 +1,4 @@
-const todaysHabits = [
+const TODAYS_HABITS = [
   {
     id: 1,
     name: "Morning Meditation",
@@ -49,20 +49,20 @@ const todaysHabits = [
   },
 ];
 
-const homeStats = [
+const HOME_STATS = [
   { title: "Current Streak", shortTitle: "Streak", value: "12 Days" },
   { title: "This Week", shortTitle: "This Week", value: "21 habits" },
   { title: "Total Completed", shortTitle: "Total", value: "156" },
 ];
 
-const journalPrompts = [
+const JOURNAL_PROMPTS = [
   "What are you grateful for today?",
   "What's one thing that went well?",
   "What did you learn today?",
   "How did you grow today?",
 ];
 
-const moods = [
+const MOODS = [
   {
     emoji: "😊",
     label: "Happy",
@@ -90,4 +90,4 @@ const moods = [
   },
 ];
 
-export { todaysHabits, homeStats, journalPrompts, moods };
+export { TODAYS_HABITS, HOME_STATS, JOURNAL_PROMPTS, MOODS };
