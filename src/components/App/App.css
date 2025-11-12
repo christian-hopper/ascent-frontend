@@ -6,7 +6,7 @@
   line-height: 20px;
   font-weight: 500;
   color: #ffffff;
-  min-height: 100vh;
+  min-height: 100dvh;
   transition: all 0.3s ease;
 }
 
@@ -26,7 +26,6 @@
 
 @media screen and (max-width: 810px) {
   .app__content {
-    box-sizing: border-box;
     max-width: 100%;
     padding: 24px 24px 90px;
   }
