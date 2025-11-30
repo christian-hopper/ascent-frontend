@@ -98,6 +98,10 @@
 @media screen and (max-width: 810px) {
   .insights__achievement-list {
     margin: 0 0 24px;
+    grid-template-columns: 1fr;
+  }
+  .insights__achievement {
+    padding: 16px;
   }
   .insights__chart {
     padding: 24px;

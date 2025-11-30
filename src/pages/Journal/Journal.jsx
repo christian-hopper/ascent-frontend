@@ -5,7 +5,7 @@ import { JOURNAL_PROMPTS, MOODS } from "../../utils/constants.js";
 import { fetchRandomQuotes } from "../../utils/RandomQuotesApi.js";
 import "./Journal.css";
 
-export default function Journal() {
+function Journal() {
   const [selectedMood, setSelectedMood] = useState(null);
   const [selectedPrompt, setSelectedPrompt] = useState(0);
   const [entries, setEntries] = useState([]);
@@ -59,7 +59,7 @@ export default function Journal() {
       }),
       mood: selectedMood !== null ? MOODS[selectedMood].emoji : "📝",
       text,
-      prompt: journalPrompts[selectedPrompt],
+      prompt: JOURNAL_PROMPTS[selectedPrompt],
     };
 
     setEntries((prev) => [newEntry, ...prev]);
@@ -171,3 +171,5 @@ export default function Journal() {
     </div>
   );
 }
+
+export default Journal;
